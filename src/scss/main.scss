@@ -1,121 +1,349 @@
 @import 'abstracts/variables';
-@import 'theme-style';
 
 // -----------------------------------------------------------------------------
-// Base Resets
+// Base Resets & Global Styles
 // -----------------------------------------------------------------------------
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: $font-primary;
-  background-color: $color-dominant;
-  color: $color-text-main;
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: $color-text-main;
-  margin-bottom: $spacing-sm;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    color: $color-text-main;
+    background-color: $color-bg-body;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-  text-decoration: none;
-  color: $color-secondary-text;
-  transition: color 0.3s ease;
+    text-decoration: none;
+    color: $color-primary;
+    transition: color 0.3s ease;
 
-  &:hover {
-    color: darken($color-secondary-text, 10%);
-  }
+    &:hover {
+        color: $color-primary-hover;
+    }
 }
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-text-main;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: $color-text-muted;
+    margin-bottom: 1rem;
+}
+
+// -----------------------------------------------------------------------------
+// Utility Classes
+// -----------------------------------------------------------------------------
+.text-primary { color: $color-primary; }
+.text-muted { color: $color-text-muted; }
+.bg-white { background-color: $color-bg-card; }
+.font-bold { font-weight: 700; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.w-full { width: 100%; }
 
 // -----------------------------------------------------------------------------
 // Components
 // -----------------------------------------------------------------------------
+
+// Buttons
 .btn {
-  display: inline-block;
-  padding: $spacing-sm $spacing-md;
-  border-radius: $border-radius;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  border: none;
-  
-  &.btn-primary {
-    background-color: $color-accent;
-    color: $color-accent-text;
-    
-    &:hover {
-      background-color: $color-accent-hover;
-      transform: translateY(-2px);
-    }
-  }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: $border-radius-full;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 
-  &.btn-secondary {
-    background-color: $color-secondary;
-    color: $color-secondary-text;
-    
-    &:hover {
-      background-color: $color-secondary-dark;
-      transform: translateY(-2px);
+    &-primary {
+        background-color: $color-primary;
+        color: $color-text-light;
+        &:hover {
+            background-color: $color-primary-hover;
+            box-shadow: $box-shadow-md;
+            color: $color-text-light;
+        }
     }
-  }
+
+    &-outline {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+        &:hover {
+            background-color: rgba($color-primary, 0.05);
+        }
+    }
 }
 
+// Cards
 .card {
-  background-color: $color-dominant;
-  border: 1px solid $color-dominant-dark;
-  border-radius: $border-radius;
-  padding: $spacing-lg;
-  box-shadow: $box-shadow;
-  
-  &-header {
-    background-color: $color-secondary;
-    margin: -$spacing-lg -$spacing-lg $spacing-md -$spacing-lg;
-    padding: $spacing-sm $spacing-lg;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
-    color: $color-secondary-text;
-  }
+    background-color: $color-bg-card;
+    border-radius: $border-radius-lg;
+    box-shadow: $box-shadow-sm;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: $box-shadow-md;
+    }
+
+    &-header {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $color-text-main;
+    }
 }
 
-// -----------------------------------------------------------------------------
-// Layout
-// -----------------------------------------------------------------------------
+// Navigation Bar
 .navbar {
-  background-color: $color-secondary;
-  padding: $spacing-sm $spacing-lg;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: $box-shadow;
-  
-  .nav-links a {
-    margin-left: $spacing-md;
-    font-weight: 500;
-  }
+    background-color: $color-bg-card;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-text-main;
+        letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        
+        a {
+            color: $color-text-muted;
+            font-weight: 500;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    .search-bar {
+        background-color: $color-bg-body;
+        border-radius: $border-radius-full;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        width: 300px;
+        
+        input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            margin-left: 0.5rem;
+            color: $color-text-main;
+        }
+    }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: $spacing-xl $spacing-sm;
+// -----------------------------------------------------------------------------
+// Layout: Bento Box Grid
+// -----------------------------------------------------------------------------
+.dashboard-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.footer {
-  background-color: $color-secondary-dark;
-  color: $color-secondary-text;
-  padding: $spacing-xl $spacing-sm;
-  text-align: center;
-  margin-top: auto;
+.bento-hero {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+
+    .bento-item {
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        position: relative;
+        background-color: $color-bg-card;
+        box-shadow: $box-shadow-sm;
+        padding: 1.5rem;
+    }
+
+    .hero-main {
+        grid-column: span 8;
+        grid-row: span 2;
+        background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.1) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 3rem;
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: $color-text-main;
+        }
+    }
+
+    .hero-side-1 {
+        grid-column: span 4;
+        grid-row: span 1;
+        background-color: $color-text-main; // Dark card
+        color: $color-text-light;
+        
+        h3 { color: $color-text-light; }
+        p { color: rgba(255,255,255,0.7); }
+    }
+
+    .hero-side-2 {
+        grid-column: span 2;
+        grid-row: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        .metric {
+            font-size: 3rem;
+            font-weight: 700;
+            color: $color-primary;
+            line-height: 1;
+        }
+    }
+
+    .hero-side-3 {
+        grid-column: span 2;
+        grid-row: span 1;
+        background-color: $color-primary;
+        color: $color-text-light;
+        
+        h3 { color: $color-text-light; }
+        p { color: rgba(255,255,255,0.8); }
+    }
 }
 
-// Simple Grid for Dashboard/Marketplace
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $spacing-lg;
+// Layout: Main Content Area
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 2rem;
+
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .tender-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        .tender-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            
+            .tender-info {
+                h4 { margin-bottom: 0.25rem; }
+                .badges {
+                    display: flex;
+                    gap: 0.5rem;
+                    margin-top: 0.5rem;
+                    
+                    span {
+                        background-color: rgba($color-primary, 0.1);
+                        color: $color-primary;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: $border-radius-full;
+                        font-size: 0.75rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .pricing-card {
+            text-align: center;
+            .price {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: $color-primary;
+                margin: 1rem 0;
+            }
+            ul {
+                text-align: left;
+                margin-bottom: 1.5rem;
+                li {
+                    margin-bottom: 0.5rem;
+                    color: $color-text-muted;
+                    font-size: 0.875rem;
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        content: '✓';
+                        color: $color-primary;
+                        margin-right: 0.5rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Breakpoints
+// -----------------------------------------------------------------------------
+@media (max-width: $bp-lg) {
+    .main-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-hero {
+        .hero-main { grid-column: span 12; }
+        .hero-side-1 { grid-column: span 6; }
+        .hero-side-2 { grid-column: span 6; }
+        .hero-side-3 { grid-column: span 12; }
+    }
+}
+
+@media (max-width: $bp-md) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        .search-bar { width: 100%; }
+        .nav-links { display: none; }
+    }
 }
