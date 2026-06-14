@@ -20,7 +20,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $color-primary;
+    color: $color-text-main;
     transition: color 0.3s ease;
 
     &:hover {
@@ -46,9 +46,10 @@ p {
 // -----------------------------------------------------------------------------
 // Utility Classes
 // -----------------------------------------------------------------------------
-.text-primary { color: $color-primary; }
+.text-primary { color: $color-primary-hover; } // Darker gold for text
 .text-muted { color: $color-text-muted; }
 .bg-white { background-color: $color-bg-card; }
+.bg-secondary { background-color: $color-secondary; }
 .font-bold { font-weight: 700; }
 .flex { display: flex; }
 .items-center { align-items: center; }
@@ -74,21 +75,20 @@ p {
     transition: all 0.2s ease;
 
     &-primary {
-        background-color: $color-primary;
-        color: $color-text-light;
+        background-color: $color-primary; // Light Gold
+        color: $color-text-main; // Dark text for contrast against gold
         &:hover {
             background-color: $color-primary-hover;
             box-shadow: $box-shadow-md;
-            color: $color-text-light;
         }
     }
 
     &-outline {
         background-color: transparent;
-        border: 1px solid $color-primary;
-        color: $color-primary;
+        border: 1px solid $color-primary-hover;
+        color: $color-text-main;
         &:hover {
-            background-color: rgba($color-primary, 0.05);
+            background-color: rgba($color-primary, 0.1);
         }
     }
 }
@@ -116,7 +116,7 @@ p {
 
 // Navigation Bar
 .navbar {
-    background-color: $color-bg-card;
+    background-color: $color-secondary; // 30% Light Blue
     padding: 1rem 2rem;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
     display: flex;
@@ -136,23 +136,25 @@ p {
     .nav-links {
         display: flex;
         gap: 1.5rem;
+        align-items: center;
         
         a {
-            color: $color-text-muted;
+            color: $color-text-main;
             font-weight: 500;
             &:hover {
-                color: $color-primary;
+                color: $color-primary-hover;
             }
         }
     }
 
     .search-bar {
-        background-color: $color-bg-body;
+        background-color: $color-bg-card;
         border-radius: $border-radius-full;
         padding: 0.5rem 1rem;
         display: flex;
         align-items: center;
         width: 300px;
+        border: 1px solid $color-secondary-dark;
         
         input {
             border: none;
@@ -193,7 +195,7 @@ p {
     .hero-main {
         grid-column: span 8;
         grid-row: span 2;
-        background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.1) 100%);
+        background: linear-gradient(135deg, rgba($color-secondary,0.5) 0%, rgba($color-secondary-dark,0.3) 100%);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -204,18 +206,14 @@ p {
             font-size: 2.5rem;
             line-height: 1.2;
             margin-bottom: 1rem;
-            color: $color-text-main;
         }
     }
 
     .hero-side-1 {
         grid-column: span 4;
         grid-row: span 1;
-        background-color: $color-text-main; // Dark card
-        color: $color-text-light;
-        
-        h3 { color: $color-text-light; }
-        p { color: rgba(255,255,255,0.7); }
+        background-color: $color-secondary-dark; 
+        color: $color-text-main;
     }
 
     .hero-side-2 {
@@ -230,7 +228,7 @@ p {
         .metric {
             font-size: 3rem;
             font-weight: 700;
-            color: $color-primary;
+            color: $color-primary-hover; // Gold metric
             line-height: 1;
         }
     }
@@ -238,11 +236,8 @@ p {
     .hero-side-3 {
         grid-column: span 2;
         grid-row: span 1;
-        background-color: $color-primary;
-        color: $color-text-light;
-        
-        h3 { color: $color-text-light; }
-        p { color: rgba(255,255,255,0.8); }
+        background-color: $color-primary; // Gold card
+        color: $color-text-main;
     }
 }
 
@@ -270,15 +265,15 @@ p {
             padding: 1.5rem;
             
             .tender-info {
-                h4 { margin-bottom: 0.25rem; }
+                h4 { margin-bottom: 0.25rem; color: $color-text-main; }
                 .badges {
                     display: flex;
                     gap: 0.5rem;
                     margin-top: 0.5rem;
                     
                     span {
-                        background-color: rgba($color-primary, 0.1);
-                        color: $color-primary;
+                        background-color: $color-secondary;
+                        color: $color-text-main;
                         padding: 0.25rem 0.75rem;
                         border-radius: $border-radius-full;
                         font-size: 0.75rem;
@@ -299,7 +294,7 @@ p {
             .price {
                 font-size: 2.5rem;
                 font-weight: 700;
-                color: $color-primary;
+                color: $color-primary-hover;
                 margin: 1rem 0;
             }
             ul {
@@ -313,7 +308,7 @@ p {
                     align-items: center;
                     &::before {
                         content: '✓';
-                        color: $color-primary;
+                        color: $color-primary-hover;
                         margin-right: 0.5rem;
                         font-weight: bold;
                     }
@@ -324,18 +319,336 @@ p {
 }
 
 // -----------------------------------------------------------------------------
+// Profile Dashboard (GitHub Style)
+// -----------------------------------------------------------------------------
+.profile-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    
+    .profile-sidebar {
+        .avatar {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: $color-secondary;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $color-secondary-dark;
+            
+            i {
+                font-size: 5rem;
+                color: $color-bg-card;
+            }
+        }
+        
+        .name { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+        .username { font-size: 1.25rem; color: $color-text-muted; margin-bottom: 1rem; }
+        
+        .bio { font-size: 1rem; margin-bottom: 1.5rem; }
+        
+        .profile-btn {
+            width: 100%;
+            background-color: $color-bg-body;
+            border: 1px solid $color-secondary-dark;
+            padding: 0.5rem;
+            border-radius: $border-radius-sm;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: $color-secondary;
+            }
+        }
+        
+        .stats {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            i { margin-right: 0.25rem; }
+        }
+        
+        .details {
+            font-size: 0.875rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            
+            .detail-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                i { color: $color-text-muted; width: 16px; text-align: center; }
+            }
+        }
+        
+        .achievements {
+            h3 { font-size: 1rem; margin-bottom: 1rem; }
+            .badge-list {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                
+                .badge {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: $color-secondary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                    border: 2px solid $color-primary;
+                }
+            }
+        }
+    }
+    
+    .profile-main {
+        .contributions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .contribution-graph {
+            border: 1px solid $color-secondary-dark;
+            border-radius: $border-radius-md;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: $color-bg-card;
+            
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: repeat(52, 1fr);
+                gap: 3px;
+                overflow-x: auto;
+                
+                .cell {
+                    width: 12px;
+                    height: 12px;
+                    background-color: #EBEDF0; // Default empty
+                    border-radius: 2px;
+                    
+                    &.lvl-1 { background-color: #FFF9C4; } // Light Gold
+                    &.lvl-2 { background-color: #FFF176; }
+                    &.lvl-3 { background-color: #FFD54F; }
+                    &.lvl-4 { background-color: #FFB300; } // Dark Gold
+                }
+            }
+            
+            .legend {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 0.25rem;
+                font-size: 0.75rem;
+                color: $color-text-muted;
+                margin-top: 1rem;
+                
+                .cell {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 2px;
+                    display: inline-block;
+                }
+            }
+        }
+        
+        .activity-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            
+            .activity-list {
+                h4 { font-size: 1rem; margin-bottom: 1rem; font-weight: 500; }
+                .activity-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.5rem;
+                    margin-bottom: 0.75rem;
+                    font-size: 0.875rem;
+                    
+                    i { color: $color-text-muted; margin-top: 0.25rem; }
+                    a { font-weight: 600; color: $color-primary-hover; }
+                }
+            }
+            
+            .chart-placeholder {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                height: 200px;
+                
+                // Drawing the crosshair from the image
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0; right: 0; top: 50%;
+                    height: 2px;
+                    background-color: #E5E7EB;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0; bottom: 0; left: 50%;
+                    width: 2px;
+                    background-color: #E5E7EB;
+                }
+                
+                .chart-line {
+                    position: absolute;
+                    left: 20%; right: 20%; top: 50%;
+                    height: 2px;
+                    background-color: $color-primary-hover;
+                    z-index: 1;
+                    
+                    .point {
+                        width: 8px;
+                        height: 8px;
+                        background-color: $color-bg-card;
+                        border: 2px solid $color-primary-hover;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -5px;
+                        
+                        &.p1 { left: 0; }
+                        &.p2 { left: 50%; transform: translateX(-50%); }
+                        &.p3 { right: 0; }
+                    }
+                }
+                
+                .label {
+                    position: absolute;
+                    font-size: 0.75rem;
+                    color: $color-text-muted;
+                    
+                    &.top { top: 10px; left: 50%; transform: translateX(-50%); }
+                    &.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+                    &.left { left: 10px; top: 50%; transform: translateY(-50%); }
+                    &.right { right: 10px; top: 50%; transform: translateY(-50%); }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Footer (Modern 4-Column)
+// -----------------------------------------------------------------------------
+.modern-footer {
+    background-color: #F4F6F8; // Very light gray/blue matching the image
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    
+    .footer-grid {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        
+        .footer-col {
+            .footer-brand {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $color-text-main;
+                margin-bottom: 1rem;
+                display: block;
+            }
+            
+            .footer-desc {
+                font-size: 0.875rem;
+                color: $color-text-muted;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                max-width: 250px;
+            }
+            
+            .social-links {
+                display: flex;
+                gap: 1rem;
+                
+                a {
+                    color: $color-text-muted;
+                    font-size: 1.25rem;
+                    
+                    &:hover { color: $color-primary-hover; }
+                }
+            }
+            
+            .footer-heading {
+                font-size: 0.875rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $color-text-main;
+                margin-bottom: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                
+                a {
+                    color: $color-text-muted;
+                    font-size: 0.875rem;
+                    
+                    &:hover { color: $color-primary-hover; }
+                }
+            }
+        }
+    }
+    
+    .footer-bottom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        border-top: 1px solid #E5E7EB;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        p {
+            font-size: 0.75rem;
+            color: $color-text-muted;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
 // Responsive Breakpoints
 // -----------------------------------------------------------------------------
 @media (max-width: $bp-lg) {
-    .main-content-grid {
-        grid-template-columns: 1fr;
-    }
+    .main-content-grid { grid-template-columns: 1fr; }
     
     .bento-hero {
         .hero-main { grid-column: span 12; }
         .hero-side-1 { grid-column: span 6; }
         .hero-side-2 { grid-column: span 6; }
         .hero-side-3 { grid-column: span 12; }
+    }
+    
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modern-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -345,5 +658,9 @@ p {
         gap: 1rem;
         .search-bar { width: 100%; }
         .nav-links { display: none; }
+    }
+    
+    .modern-footer .footer-grid {
+        grid-template-columns: 1fr;
     }
 }

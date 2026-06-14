@@ -1,17 +1,17 @@
 // _variables.scss
-// Modern B2B SaaS Dashboard Color Palette
+// 60-30-10 Brand Identity Color Palette
 
-// Theme Colors
-$color-primary: #2563EB; // Electric Blue (Primary Action)
-$color-primary-hover: #1D4ED8; // Darker Blue for hover
-$color-secondary: #F3F4F6; // Light Gray for secondary elements
-$color-accent: #EAB308; // Yellow/Gold for badges/stars
+// Theme Colors (60-30-10 Rule)
+$color-bg-body: #F8FAFC; // 60% White/Off-white for backgrounds
+$color-bg-card: #FFFFFF; // 60% Pure white for cards
 
-// Background Colors
-$color-bg-body: #F8FAFC; // Off-white/slate
-$color-bg-card: #FFFFFF; // Pure white for cards
+$color-secondary: #E0F7FA; // 30% Light Blue (Navbars, header sections, structural cards)
+$color-secondary-dark: #B2EBF2; // slightly darker light blue for borders/hover
 
-// Text Colors
+$color-primary: #FFD54F; // 10% Light Gold (CTA buttons, highlights, active states)
+$color-primary-hover: #FFC107; // Darker gold for hover
+
+// Text Colors (Dark for contrast against light theme)
 $color-text-main: #111827; // Very dark gray for headings
 $color-text-muted: #6B7280; // Medium gray for secondary text
 $color-text-light: #FFFFFF; // White text

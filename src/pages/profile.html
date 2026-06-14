@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - .rbg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">.rbg</div>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass text-muted"></i>
+      <input type="text" placeholder="Search profiles, tenders...">
+    </div>
+    <div class="nav-links">
+      <a href="../index.html">Dashboard</a>
+      <a href="about.html">Directory</a>
+      <a href="contact.html">Support</a>
+      <button class="btn btn-primary" style="padding: 0.35rem 1rem;">Buy Tokens</button>
+      <a href="profile.html" class="profile-icon font-bold" style="width: 32px; height: 32px; background-color: #FFC107; color: #111827; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="profile-grid">
+        
+        <!-- Left Sidebar -->
+        <aside class="profile-sidebar">
+            <div class="avatar">
+                <i class="fa-solid fa-user-astronaut" style="font-size: 6rem;"></i>
+            </div>
+            
+            <h1 class="name">Thulane Sigasa</h1>
+            <p class="username">thulanesigasa</p>
+            
+            <p class="bio text-muted">DevOps Engineer • Software Engineer • Tech-aholic • Entrepreneur</p>
+            
+            <button class="profile-btn">Edit profile</button>
+            
+            <div class="stats text-muted">
+                <span class="font-bold text-main" style="color: #111827;">3</span> followers
+                <span>·</span>
+                <span class="font-bold text-main" style="color: #111827;">2</span> following
+            </div>
+            
+            <div class="details text-muted">
+                <div class="detail-item">
+                    <i class="fa-regular fa-building"></i>
+                    <span>ptechsolutions</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Gauteng, South Africa</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="mailto:pharezsigasa@gmail.com" style="color: #111827;">pharezsigasa@gmail.com</a>
+                </div>
+                <div class="detail-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="#" style="color: #111827;">in/thulanesigasa</a>
+                </div>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #E5E7EB; margin-bottom: 1.5rem;">
+            
+            <div class="achievements">
+                <h3 class="font-bold">Achievements</h3>
+                <div class="badge-list">
+                    <div class="badge" title="Marketplace Pioneer" style="background-color: #FFF9C4; border-color: #FFC107;">🤠</div>
+                    <div class="badge" title="Top Buyer" style="background-color: #F8BBD0; border-color: #E91E63;">🛍️</div>
+                    <div class="badge" title="Verified Vendor" style="background-color: #C8E6C9; border-color: #4CAF50;">✅</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content (Graph & Activity) -->
+        <main class="profile-main">
+            <div class="contributions-header">
+                <span class="font-bold" style="font-size: 1.125rem;">332 marketplace interactions in 2026</span>
+                <span style="font-size: 0.875rem; color: #6B7280; cursor: pointer;">Interaction settings <i class="fa-solid fa-caret-down"></i></span>
+            </div>
+            
+            <!-- GitHub Style Heatmap Graph -->
+            <div class="contribution-graph">
+                <div class="grid-wrapper" id="heatmap-grid">
+                    <!-- Javascript will populate this grid -->
+                </div>
+                <div class="legend">
+                    Less 
+                    <span class="cell"></span>
+                    <span class="cell lvl-1"></span>
+                    <span class="cell lvl-2"></span>
+                    <span class="cell lvl-3"></span>
+                    <span class="cell lvl-4"></span>
+                    More
+                </div>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #E5E7EB; margin-bottom: 2rem;">
+            
+            <div class="activity-overview">
+                <div class="activity-list">
+                    <h4>Activity overview</h4>
+                    <div class="activity-item">
+                        <i class="fa-solid fa-file-contract"></i>
+                        <span>Contributed to <a href="#">thulanesigasa/medsync</a>, <a href="#">thulanesigasa/resume_builder</a> and 26 other tenders</span>
+                    </div>
+                </div>
+                
+                <div class="chart-placeholder">
+                    <div class="label top">Market Insights</div>
+                    <div class="label bottom">Tenders Posted</div>
+                    <div class="label left">71%<br>Bids</div>
+                    <div class="label right">23%<br>Issues</div>
+                    
+                    <div class="chart-line">
+                        <div class="point p1"></div>
+                        <div class="point p2"></div>
+                        <div class="point p3"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+    </div>
+  </div>
+
+  <!-- Modern 4-Column Footer -->
+  <footer class="modern-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <a href="#" class="footer-brand">.rbg Marketplace</a>
+            <p class="footer-desc">Empowering B2B enterprises to scale, connect, and source premium SaaS solutions efficiently across South Africa and beyond.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">Product</h4>
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="../index.html">Dashboard</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">Resources</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">Legal</h4>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Refund Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 .RBG INDUSTRIES. ALL RIGHTS RESERVED.</p>
+        <p>Designed for modern B2B SaaS.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Generate dummy heatmap grid
+    const grid = document.getElementById('heatmap-grid');
+    if (grid) {
+        // 52 weeks * 7 days
+        for (let i = 0; i < (52 * 7); i++) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            
+            // Randomly assign activity levels to make it look like the image
+            const rand = Math.random();
+            if (rand > 0.95) cell.classList.add('lvl-4');
+            else if (rand > 0.90) cell.classList.add('lvl-3');
+            else if (rand > 0.80) cell.classList.add('lvl-2');
+            else if (rand > 0.65) cell.classList.add('lvl-1');
+            
+            grid.appendChild(cell);
+        }
+    }
+  </script>
+</body>
+</html>
