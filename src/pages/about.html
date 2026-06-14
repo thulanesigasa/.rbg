@@ -3,116 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - .rbg</title>
-  
-  <link rel="stylesheet" href="../assets/css/plugins/bootstrap-grid.css">
-  <link rel="stylesheet" href="../assets/css/plugins/font-awesome.min.css">
-  <link rel="stylesheet" href="../assets/css/plugins/swiper.min.css">
-  <link rel="stylesheet" href="../assets/css/plugins/fancybox.min.css">
-
+  <title>Directory - .rbg</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body style="background-color: #FFFFFF;">
-  <div class="mil-wrapper" id="top">
-    <!-- cursor -->
-    <div class="mil-ball">
-      <span class="mil-icon-1"><svg viewBox="0 0 128 128"><path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2 c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2 L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9 z" /></svg></span>
+<body>
+  <nav class="navbar">
+    <div class="logo">.rbg</div>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass text-muted"></i>
+      <input type="text" placeholder="Search directory...">
     </div>
-    
-    <!-- preloader -->
-    <div class="mil-preloader">
-      <div class="mil-preloader-animation">
-        <div class="mil-pos-abs mil-animation-1"><p class="mil-h3 mil-muted mil-thin">About .rbg</p></div>
-        <div class="mil-pos-abs mil-animation-2">
-          <div class="mil-reveal-frame"><p class="mil-reveal-box"></p><p class="mil-h3 mil-muted mil-thin">rbg.com</p></div>
-        </div>
-      </div>
+    <div class="nav-links">
+      <a href="../index.html">Dashboard</a>
+      <a href="about.html" class="text-primary font-bold">Directory</a>
+      <a href="contact.html">Support</a>
+      <button class="btn btn-primary" style="padding: 0.35rem 1rem;">Buy Tokens</button>
+      <div class="profile-icon" style="width: 32px; height: 32px; background-color: #E5E7EB; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-user text-muted"></i></div>
     </div>
+  </nav>
 
-    <!-- scrollbar progress -->
-    <div class="mil-progress-track"><div class="mil-progress"></div></div>
-
-    <!-- menu -->
-    <div class="mil-menu-frame">
-      <div class="mil-frame-top">
-        <a href="../index.html" class="mil-logo">.rbg</a>
-        <div class="mil-menu-btn"><span></span></div>
-      </div>
-      <div class="container">
-        <div class="mil-menu-content">
-          <div class="row">
-            <div class="col-xl-5">
-              <nav class="mil-main-menu" id="swupMenu">
-                <ul>
-                  <li><a href="../index.html">Dashboard</a></li>
-                  <li class="mil-active"><a href="about.html">About Us</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mil-curtain"></div>
-
-    <!-- frame -->
-    <div class="mil-frame">
-      <div class="mil-frame-top">
-        <a href="../index.html" class="mil-logo">.rbg</a>
-        <div class="mil-menu-btn"><span></span></div>
-      </div>
-      <div class="mil-frame-bottom">
-        <div class="mil-current-page"></div>
-        <div class="mil-back-to-top">
-          <a href="#top" class="mil-link mil-dark mil-arrow-place"><span>Back to top</span></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mil-content">
-      <div id="swupMain" class="mil-main-transition">
+  <div class="dashboard-container">
+    <div class="card" style="padding: 3rem;">
+        <h1 class="font-bold text-primary" style="font-size: 2.5rem; margin-bottom: 1rem;">Professional Directory</h1>
+        <p style="font-size: 1.125rem; max-width: 600px; margin-bottom: 2rem;">Search our database of over 10,000 verified B2B SaaS vendors and enterprise buyers.</p>
         
-        <main class="container mil-p-120-120">
-          <div class="mil-mb-90">
-             <h2 class="mil-up mil-mb-60">About <span class="mil-thin">Us</span></h2>
-          </div>
-          <div class="card mil-up">
-            <div class="card-header">Our Mission</div>
-            <p>We are dedicated to providing the most robust, scalable, and secure B2B SaaS marketplace for enterprises worldwide.</p>
-          </div>
-        </main>
-      </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div class="card" style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #E5E7EB;"></div>
+                <div>
+                    <h4 class="font-bold">TechCorp Solutions</h4>
+                    <p class="text-muted" style="margin:0; font-size: 0.875rem;">Verified Vendor</p>
+                </div>
+            </div>
+            <div class="card" style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #E5E7EB;"></div>
+                <div>
+                    <h4 class="font-bold">Global SaaS Ltd</h4>
+                    <p class="text-muted" style="margin:0; font-size: 0.875rem;">Premium Buyer</p>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
-
-  <script src="../js/plugins/jquery.min.js"></script>
-  <script src="../js/plugins/gsap.min.js"></script>
-  <script src="../js/plugins/ScrollTrigger.min.js"></script>
-  <script src="../js/plugins/ScrollTo.min.js"></script>
-  <script src="../js/plugins/smooth-scroll.js"></script>
-  <script src="../js/plugins/swiper.min.js"></script>
-  <script src="../js/plugins/swup.min.js"></script>
-  <script src="../js/plugins/fancybox.min.js"></script>
-  <script src="../js/plugins/tilt.js"></script>
-  <script src="../js/theme-main.js"></script>
-  <script type="module" src="../js/app.js"></script>
-  
-  <script>
-    setTimeout(function () {
-        var preloader = document.querySelector('.mil-preloader');
-        if (preloader && !preloader.classList.contains('mil-hidden')) {
-            preloader.style.transition = 'opacity 0.8s ease';
-            preloader.style.opacity = '0';
-            preloader.style.pointerEvents = 'none';
-            setTimeout(function () { preloader.classList.add('mil-hidden'); }, 900);
-        }
-    }, 4000);
-  </script>
 </body>
 </html>
