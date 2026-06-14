@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// 70/20/10 Color Rule
+// -----------------------------------------------------------------------------
+// 70% Dominant: Backgrounds and main content areas
+$color-dominant: #FFFFFF;
+$color-dominant-dark: #F5F5F5;
+
+// 20% Secondary: Nav bars, headers, structural cards
+$color-secondary: #E0F7FA;
+$color-secondary-dark: #B2EBF2;
+$color-secondary-text: #006064;
+
+// 10% Accent: CTA buttons, highlights, active states
+$color-accent: #FFECB3;
+$color-accent-hover: #FFE082;
+$color-accent-text: #FF8F00;
+
+// Typography Colors
+$color-text-main: #333333;
+$color-text-muted: #757575;
+
+// Typography Families
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Borders & Shadows
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);

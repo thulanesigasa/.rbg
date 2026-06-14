@@ -1,0 +1,120 @@
+@import 'abstracts/variables';
+
+// -----------------------------------------------------------------------------
+// Base Resets
+// -----------------------------------------------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-dominant;
+  color: $color-text-main;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text-main;
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  text-decoration: none;
+  color: $color-secondary-text;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($color-secondary-text, 10%);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Components
+// -----------------------------------------------------------------------------
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  border: none;
+  
+  &.btn-primary {
+    background-color: $color-accent;
+    color: $color-accent-text;
+    
+    &:hover {
+      background-color: $color-accent-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $color-secondary;
+    color: $color-secondary-text;
+    
+    &:hover {
+      background-color: $color-secondary-dark;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.card {
+  background-color: $color-dominant;
+  border: 1px solid $color-dominant-dark;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  box-shadow: $box-shadow;
+  
+  &-header {
+    background-color: $color-secondary;
+    margin: -$spacing-lg -$spacing-lg $spacing-md -$spacing-lg;
+    padding: $spacing-sm $spacing-lg;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    color: $color-secondary-text;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+.navbar {
+  background-color: $color-secondary;
+  padding: $spacing-sm $spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $box-shadow;
+  
+  .nav-links a {
+    margin-left: $spacing-md;
+    font-weight: 500;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-sm;
+}
+
+.footer {
+  background-color: $color-secondary-dark;
+  color: $color-secondary-text;
+  padding: $spacing-xl $spacing-sm;
+  text-align: center;
+  margin-top: auto;
+}
+
+// Simple Grid for Dashboard/Marketplace
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}

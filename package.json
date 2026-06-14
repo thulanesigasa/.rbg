@@ -1,0 +1,21 @@
+{
+  "name": "rbg-b2b-saas",
+  "version": "1.0.0",
+  "description": ".rbg B2B SaaS marketplace frontend boilerplate",
+  "main": "src/js/app.js",
+  "scripts": {
+    "build:css": "sass src/scss/main.scss src/assets/css/main.css",
+    "watch:css": "sass --watch src/scss/main.scss src/assets/css/main.css"
+  },
+  "keywords": [
+    "saas",
+    "b2b",
+    "marketplace",
+    "boilerplate"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}
