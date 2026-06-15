@@ -29,102 +29,186 @@
   </nav>
 
   <div class="dashboard-container">
-    <div class="profile-grid">
+    
+    <!-- Professional Hero Banner -->
+    <div class="profile-banner-container">
+        <div class="banner-cover"></div>
+        <div class="banner-content">
+            <div class="avatar-large">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <div class="profile-header-info">
+                <div class="flex justify-between items-center w-full">
+                    <div>
+                        <h1 class="font-bold" style="font-size: 2rem; line-height: 1.1; margin-bottom: 0.25rem;">Thulane Sigasa</h1>
+                        <p class="text-muted" style="font-size: 1.125rem; margin-bottom: 0;">DevOps Engineer • Software Engineer • Entrepreneur</p>
+                        <p class="text-muted" style="font-size: 0.875rem; margin-top: 0.5rem; margin-bottom: 0;"><i class="fa-solid fa-location-dot" style="margin-right: 0.25rem;"></i> Gauteng, South Africa &nbsp;·&nbsp; <span class="font-bold text-main" style="color: #111827;">3</span> Followers &nbsp;·&nbsp; <span class="font-bold text-main" style="color: #111827;">500+</span> Connections</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-outline" style="border-color: #E5E7EB;">Message</button>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI Metrics Bar -->
+    <div class="kpi-metrics-grid">
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: rgba(255, 193, 7, 0.2); color: #FFC107;"><i class="fa-solid fa-star"></i></div>
+            <div>
+                <p class="kpi-title">Reputation Score</p>
+                <p class="kpi-value">98%</p>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: rgba(178, 235, 242, 0.4); color: #0097A7;"><i class="fa-solid fa-file-contract"></i></div>
+            <div>
+                <p class="kpi-title">Active Tenders</p>
+                <p class="kpi-value">12</p>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: rgba(76, 175, 80, 0.15); color: #4CAF50;"><i class="fa-solid fa-handshake"></i></div>
+            <div>
+                <p class="kpi-title">Successful Bids</p>
+                <p class="kpi-value">45</p>
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon" style="background-color: rgba(156, 39, 176, 0.15); color: #9C27B0;"><i class="fa-solid fa-coins"></i></div>
+            <div>
+                <p class="kpi-title">Token Balance</p>
+                <p class="kpi-value">250</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Profile Layout -->
+    <div class="professional-grid">
         
-        <!-- Left Sidebar -->
-        <aside class="profile-sidebar">
-            <div class="avatar">
-                <i class="fa-solid fa-user-astronaut" style="font-size: 6rem;"></i>
+        <!-- Left Column: About & Details -->
+        <aside class="sidebar-details">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3 class="card-header">About</h3>
+                <p style="font-size: 0.875rem;">I am a seasoned DevOps and Software Engineer focused on building highly scalable, secure cloud architectures. I leverage the .rbg&amp;co platform to source enterprise-grade tooling and manage software procurement pipelines efficiently.</p>
             </div>
-            
-            <h1 class="name">Thulane Sigasa</h1>
-            <p class="username">thulanesigasa</p>
-            
-            <p class="bio text-muted">DevOps Engineer • Software Engineer • Tech-aholic • Entrepreneur</p>
-            
-            <button class="profile-btn">Edit profile</button>
-            
-            <div class="stats text-muted">
-                <span class="font-bold text-main" style="color: #111827;">3</span> followers
-                <span>·</span>
-                <span class="font-bold text-main" style="color: #111827;">2</span> following
-            </div>
-            
-            <div class="details text-muted">
-                <div class="detail-item">
-                    <i class="fa-regular fa-building"></i>
-                    <span>ptechsolutions</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Gauteng, South Africa</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-regular fa-envelope"></i>
-                    <a href="mailto:pharezsigasa@gmail.com" style="color: #111827;">pharezsigasa@gmail.com</a>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="#" style="color: #111827;">in/thulanesigasa</a>
+
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3 class="card-header">Contact & Info</h3>
+                <div class="details text-muted">
+                    <div class="detail-item">
+                        <i class="fa-regular fa-building"></i>
+                        <span>ptechsolutions</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <a href="mailto:pharezsigasa@gmail.com" style="color: #111827; font-weight: 500;">pharezsigasa@gmail.com</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="#" style="color: #111827; font-weight: 500;">in/thulanesigasa</a>
+                    </div>
                 </div>
             </div>
-            
-            <hr style="border: 0; border-top: 1px solid #E5E7EB; margin-bottom: 1.5rem;">
-            
-            <div class="achievements">
-                <h3 class="font-bold">Achievements</h3>
-                <div class="badge-list">
-                    <div class="badge" title="Pioneer" style="background-color: #FFF9C4; border-color: #FFC107;">🤠</div>
-                    <div class="badge" title="Top Buyer" style="background-color: #F8BBD0; border-color: #E91E63;">🛍️</div>
-                    <div class="badge" title="Verified Vendor" style="background-color: #C8E6C9; border-color: #4CAF50;">✅</div>
+
+            <div class="card">
+                <h3 class="card-header">Platform Verified Badges</h3>
+                <div class="badge-list" style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+                    <div class="pro-badge" title="Pioneer" style="background-color: #FFF9C4; border: 1px solid #FFC107; padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        <span style="font-size: 1.25rem;">🤠</span> Pioneer
+                    </div>
+                    <div class="pro-badge" title="Top Buyer" style="background-color: #F8BBD0; border: 1px solid #E91E63; padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        <span style="font-size: 1.25rem;">🛍️</span> Top Buyer
+                    </div>
+                    <div class="pro-badge" title="Verified Vendor" style="background-color: #C8E6C9; border: 1px solid #4CAF50; padding: 0.5rem; border-radius: 8px; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        <span style="font-size: 1.25rem;">✅</span> Verified
+                    </div>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content (Graph & Activity) -->
-        <main class="profile-main">
-            <div class="contributions-header">
-                <span class="font-bold" style="font-size: 1.125rem;">332 interactions in 2026</span>
-                <span style="font-size: 0.875rem; color: #6B7280; cursor: pointer;">Interaction settings <i class="fa-solid fa-caret-down"></i></span>
-            </div>
-            
-            <!-- GitHub Style Heatmap Graph -->
-            <div class="contribution-graph">
-                <div class="grid-wrapper" id="heatmap-grid">
-                    <!-- Javascript will populate this grid -->
-                </div>
-                <div class="legend">
-                    Less 
-                    <span class="cell"></span>
-                    <span class="cell lvl-1"></span>
-                    <span class="cell lvl-2"></span>
-                    <span class="cell lvl-3"></span>
-                    <span class="cell lvl-4"></span>
-                    More
-                </div>
-            </div>
-            
-            <hr style="border: 0; border-top: 1px solid #E5E7EB; margin-bottom: 2rem;">
-            
-            <div class="activity-overview">
-                <div class="activity-list">
-                    <h4>Activity overview</h4>
-                    <div class="activity-item">
-                        <i class="fa-solid fa-file-contract"></i>
-                        <span>Contributed to <a href="#">thulanesigasa/medsync</a>, <a href="#">thulanesigasa/resume_builder</a> and 26 other tenders</span>
-                    </div>
+        <!-- Right Column: Activity -->
+        <main class="main-activity">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                    <h3 class="card-header" style="margin: 0;">Platform Engagement Heatmap</h3>
+                    <span style="font-size: 0.875rem; color: #6B7280;">332 interactions in 2026</span>
                 </div>
                 
-                <div class="chart-placeholder">
-                    <div class="label top">Market Insights</div>
-                    <div class="label bottom">Tenders Posted</div>
-                    <div class="label left">71%<br>Bids</div>
-                    <div class="label right">23%<br>Issues</div>
+                <div class="contribution-graph">
+                    <div class="grid-wrapper" id="heatmap-grid">
+                        <!-- Javascript will populate this grid -->
+                    </div>
+                    <div class="legend">
+                        Less 
+                        <span class="cell"></span>
+                        <span class="cell lvl-1"></span>
+                        <span class="cell lvl-2"></span>
+                        <span class="cell lvl-3"></span>
+                        <span class="cell lvl-4"></span>
+                        More
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                    <h3 class="card-header" style="margin: 0;">Recent Transactions</h3>
+                    <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.75rem; border-color: #E5E7EB;">View All</button>
+                </div>
+
+                <div class="transaction-list">
+                    <!-- Transaction Item -->
+                    <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: rgba(76, 175, 80, 0.15); color: #4CAF50; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="font-size: 0.875rem; margin: 0;">Bid Accepted: Cloud Hosting</h4>
+                                <p class="text-muted" style="font-size: 0.75rem; margin: 0;">TechCorp Solutions</p>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p class="font-bold" style="color: #4CAF50; margin: 0; font-size: 0.875rem;">+ R150,000</p>
+                            <p class="text-muted" style="font-size: 0.75rem; margin: 0;">2 days ago</p>
+                        </div>
+                    </div>
                     
-                    <div class="chart-line">
-                        <div class="point p1"></div>
-                        <div class="point p2"></div>
-                        <div class="point p3"></div>
+                    <!-- Transaction Item -->
+                    <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-file-contract"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="font-size: 0.875rem; margin: 0;">Posted Tender: Security Audit</h4>
+                                <p class="text-muted" style="font-size: 0.75rem; margin: 0;">Looking for certified pentester</p>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p class="font-bold text-muted" style="margin: 0; font-size: 0.875rem;">- 5 Tokens</p>
+                            <p class="text-muted" style="font-size: 0.75rem; margin: 0;">4 days ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Transaction Item -->
+                    <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: rgba(255, 193, 7, 0.15); color: #FFC107; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="font-size: 0.875rem; margin: 0;">Token Purchase</h4>
+                                <p class="text-muted" style="font-size: 0.75rem; margin: 0;">Professional Plan Refill</p>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p class="font-bold" style="margin: 0; font-size: 0.875rem; color: #111827;">+ 10 Tokens</p>
+                            <p class="text-muted" style="font-size: 0.75rem; margin: 0;">1 week ago</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,7 +271,7 @@
             const cell = document.createElement('div');
             cell.className = 'cell';
             
-            // Randomly assign activity levels to make it look like the image
+            // Randomly assign activity levels
             const rand = Math.random();
             if (rand > 0.95) cell.classList.add('lvl-4');
             else if (rand > 0.90) cell.classList.add('lvl-3');
