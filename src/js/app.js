@@ -4,7 +4,7 @@ import { sanitizeHTML } from './utils/sanitize.js';
  * Main Application Entry Point
  */
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 .rbg&co Application Initialized');
+  console.log('[System] .rbg&co Application Initialized');
   
   // Example DOM manipulation demonstrating strict sanitization
   const appContainer = document.getElementById('app-dynamic-content');
